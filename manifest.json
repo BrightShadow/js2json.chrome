@@ -1,0 +1,23 @@
+{
+  "name": "js2json converter",
+  "description": "Very simple Google Chrome extension providing javascript object to JSON and vice versa converter.",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "19": "icon19.png",
+    "24": "icon24.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_title": "Open js2json converter",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}

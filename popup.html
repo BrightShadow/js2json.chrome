@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <title>js2json converter</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            font-size: 12px;
+            background-color: #242527;
+            background-image: url("bkg.jpg");
+        }
+
+        a, textarea, button {
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+            padding: 13px;
+            background-color: #333333;
+            border: 1px solid #3e3e3e;
+            color: #ababab;
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        .container {
+            width: 800px;
+            height: 516px;
+            padding: 15px 24px 0 24px;
+        }
+
+        .logo {
+            background-repeat: no-repeat;
+            background-image: url("logo.png");
+            height: 28px;
+            width: 131px;
+        }
+        .converter {
+            margin-top: 45px;
+            position: relative;
+        }
+        .hint::before {
+            display: none;
+            color: #7b7b7b;
+            width: 300px;
+            height: 30px;
+            position: absolute;
+            left: 13px;
+            top: 13px;
+            z-index: 100;
+        }
+        .js-area, .json-area {
+            display: block;
+            float: left;
+            width: 334px;
+            height: 360px;
+            max-width: 334px;
+            max-height: 360px;
+        }
+        .js-area:invalid + .hint::before {
+            content: "JavaScript Object";
+            display: block;
+        }
+        .js-area:focus + .hint::before {
+            display: none;
+        }
+
+        .json-area {
+            //margin-left: 34px;
+        }
+        .json-area:invalid + .hint::before {
+            content: "JSON Object";
+            left: 410px;
+            display: block;
+        }
+        .json-area:focus + .hint::before {
+            display: none;
+        }
+
+        .convert-2-json {
+            display: block;
+            width:24px;
+            height: 35px;
+            float: left;
+            margin: 130px 6px 0 6px;
+            background-image: url("arrow-right.png");
+            background-repeat:no-repeat;
+        }
+
+        .convert-2-js {
+            display: block;
+            width: 24px;
+            height: 35px;
+            float: left;
+            margin: 200px 6px 0 -30px;
+            background-image: url("arrow-left.png");
+            background-repeat:no-repeat;
+        }
+
+        .convert-2-js:hover, .convert-2-json:hover {
+            background-color: rgba(255,255,255,0.05);
+        }
+    </style>
+    <script src="popup.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="logo"></div>
+    <div class="converter">
+        <textarea required id="jsArea" class="js-area"></textarea><span class="hint"></span>
+        <a href="javascript:void(0);" id="convert2JSON" class="convert-2-json"></a>
+        <a href="javascript:void(0);" id="convert2JS" class="convert-2-js"></a>
+        <textarea required id="jsonArea" class="json-area"></textarea><span class="hint"></span>
+    </div>
+</div>
+</body>
+</html>
+
